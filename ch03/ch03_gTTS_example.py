@@ -1,0 +1,6 @@
+from gtts import gTTS
+
+tts = gTTS(text="안녕하세요 음성비서 프로그램 실습 중인 김세연입니다.", lang="ko")
+tts.save("output.mp3")
+
+
