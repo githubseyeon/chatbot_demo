@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_audiorecorder    # audiorecorder 피키지 추가
+from audiorecorder import audiorecorder    # audiorecorder 피키지 추가
 import openai   # OpenAI 패키지 추가
 import os   # 파일 삭제를 위한 패키지 추가
 from datetime import datetime   # 시간 정보를 위한 패키지 추가
