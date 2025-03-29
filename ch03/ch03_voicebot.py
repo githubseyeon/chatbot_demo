@@ -6,9 +6,17 @@ from datetime import datetime   # 시간 정보를 위한 패키지 추가
 from gtts import gTTS   # TTS 패키지 추가
 import base64   # 음원 파일을 재생하기 위한 패키지 추가
 
+import subprocess
+import streamlit as st
 
 ### 메인 함수 ###
 def main():
+
+
+    result = subprocess.run(["pip", "list"], capture_output=True, text=True)
+    st.text(result.stdout)
+
+    
     # 기본 설정
     st.set_page_config(
         page_title = "음성 비서 프로그램",
