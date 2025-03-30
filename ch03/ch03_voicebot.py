@@ -11,12 +11,6 @@ import streamlit as st
 
 ### 메인 함수 ###
 def main():
-
-
-    result = subprocess.run(["pip", "list"], capture_output=True, text=True)
-    st.text(result.stdout)
-
-    
     # 기본 설정
     st.set_page_config(
         page_title = "음성 비서 프로그램",
