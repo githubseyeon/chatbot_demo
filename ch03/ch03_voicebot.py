@@ -6,8 +6,6 @@ from datetime import datetime   # 시간 정보를 위한 패키지 추가
 from gtts import gTTS   # TTS 패키지 추가
 import base64   # 음원 파일을 재생하기 위한 패키지 추가
 
-import subprocess
-import streamlit as st
 
 ### 메인 함수 ###
 def main():
@@ -54,7 +52,7 @@ def main():
     with st.sidebar:
 
         # Open AI API 키 입력받기
-        st.session_state["OpenAI_API"] = st.text_input(label="OPENAI API 키",
+        st.session_state["OPENAI_API"] = st.text_input(label="OPENAI API 키",
                                                        placeholder="Enter Your API Key",
                                                        value="",
                                                        type="password")
@@ -100,7 +98,7 @@ def main():
         st.subheader("질문/답변")
         if (audio.duration_seconds > 0) and (st.session_state["check_reset"]==False):
             # ChatGPT에게 답변 받기
-            response = ask_gpt(st.session_state["messages"], model, session_state=["OPENAI_API"])
+            response = ask_gpt(st.session_state["messages"], model, st.session_state["OPENAI_API"])
 
             # GPT 모델에 넣을 프롬프트를 위해 답변 내용 저장
             st.session_state["messages"] = st.session_state["messages"] + [{"role": "system", "content": response}]
@@ -168,3 +166,9 @@ def TTS(response):
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
