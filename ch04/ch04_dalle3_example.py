@@ -1,7 +1,7 @@
 import openai
 import urllib
 
-API_KEY = "Enter your key"
+API_KEY = "Enter your API key"
 
 client = openai.OpenAI(api_key = API_KEY)
 response = client.images.generate(
